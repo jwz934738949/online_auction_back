@@ -1,4 +1,41 @@
-import Vue from 'vue'
-import { Button } from 'element-ui'
+import Vue from "vue";
+import { Button } from "element-ui";
+import { Card } from "element-ui";
+import { Form } from "element-ui";
+import { FormItem } from "element-ui";
+import { Input } from "element-ui";
+import { Message } from "element-ui";
+import { Avatar } from "element-ui";
+import { Menu } from "element-ui";
+import { MenuItem } from "element-ui";
+import { MenuItemGroup } from "element-ui";
+import { Submenu } from "element-ui";
+import { Breadcrumb } from "element-ui";
+import { BreadcrumbItem } from "element-ui";
+import { Row } from "element-ui";
+import { Col } from "element-ui";
+import { Select } from "element-ui";
+import { Option } from "element-ui";
+import { Dialog } from "element-ui";
+import { Upload } from "element-ui";
 
-Vue.use(Button)
+Vue.prototype.$message = Message;
+
+Vue.use(Button);
+Vue.use(Card);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Input);
+Vue.use(Avatar);
+Vue.use(Menu);
+Vue.use(MenuItem);
+Vue.use(MenuItemGroup);
+Vue.use(Submenu);
+Vue.use(Breadcrumb);
+Vue.use(BreadcrumbItem);
+Vue.use(Row);
+Vue.use(Col);
+Vue.use(Select);
+Vue.use(Option);
+Vue.use(Dialog);
+Vue.use(Upload);
