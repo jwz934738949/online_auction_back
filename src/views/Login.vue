@@ -74,11 +74,10 @@ export default {
           method: "post",
           data: this.loginForm,
         });
-        console.log(res);
         let token = "Bearer" + res.data.auth;
         let avatarUrl = res.data.user.avatarUrl;
         window.sessionStorage.setItem("avatarUrl", avatarUrl);
-        window.sessionStorage.setItem("auth", token);
+        window.sessionStorage.setItem("token", token);
         if (res.code !== 200) {
           return this.$message.error(res.message);
         }

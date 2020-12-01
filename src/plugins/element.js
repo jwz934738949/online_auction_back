@@ -18,8 +18,17 @@ import { Select } from "element-ui";
 import { Option } from "element-ui";
 import { Dialog } from "element-ui";
 import { Upload } from "element-ui";
+import { Table } from "element-ui";
+import { TableColumn } from "element-ui";
+import { Pagination } from "element-ui";
+import { Tag } from "element-ui";
+import { MessageBox } from "element-ui";
 
 Vue.prototype.$message = Message;
+Vue.prototype.$msgbox = MessageBox;
+Vue.prototype.$alert = MessageBox.alert;
+Vue.prototype.$confirm = MessageBox.confirm;
+Vue.prototype.$prompt = MessageBox.prompt;
 
 Vue.use(Button);
 Vue.use(Card);
@@ -39,3 +48,7 @@ Vue.use(Select);
 Vue.use(Option);
 Vue.use(Dialog);
 Vue.use(Upload);
+Vue.use(Table);
+Vue.use(TableColumn);
+Vue.use(Pagination);
+Vue.use(Tag);

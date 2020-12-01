@@ -17,8 +17,8 @@ Axios.interceptors.request.use((config) => {
   // 将进度条插件打开
   NProgress.start();
   // 添加请求头
-  if (window.sessionStorage.getItem("auth")) {
-    config.headers.auth = window.sessionStorage.getItem("auth");
+  if (window.sessionStorage.getItem("token")) {
+    config.headers.token = window.sessionStorage.getItem("token");
   }
 
   return config;
