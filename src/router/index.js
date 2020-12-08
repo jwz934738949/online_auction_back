@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 const Login = () => import("../views/Login");
 const Home = () => import("../views/Home/Home");
 const User = () => import("../views/Home/User/User");
+const Category = () => import("../views/Home/Goods/Category");
 
 Vue.use(VueRouter);
 
@@ -20,7 +21,10 @@ const routes = [
     path: "/home",
     redirect: "/user",
     component: Home,
-    children: [{ path: "/user", component: User }],
+    children: [
+      { path: "/user", component: User },
+      { path: "/category", component: Category },
+    ],
   },
 ];
 

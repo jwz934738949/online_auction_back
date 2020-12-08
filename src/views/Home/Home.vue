@@ -18,6 +18,7 @@
         text-color="#fff"
         active-text-color="#ffd04b"
         unique-opened
+        router
       >
         <el-submenu
           :index="item.id + ''"
@@ -79,15 +80,15 @@ export default {
           id: 2,
           authName: "物品管理",
           children: {
-            会员管理: {
+            物品管理: {
               id: 21,
-              authName: "会员管理",
+              authName: "物品管理",
               path: "user11",
             },
-            角色管理: {
+            分类管理: {
               id: 22,
-              authName: "角色管理",
-              path: "roles11",
+              authName: "分类管理",
+              path: "category",
             },
             管理员用户管理: {
               id: 23,

@@ -345,6 +345,7 @@ export default {
       this.$message.success("添加管理员成功!");
       this.dialogVisible = false;
       this.getUserInfo();
+      this.userForm = [];
     },
 
     // 查询管理员
@@ -357,6 +358,7 @@ export default {
       if (res.code !== 200) {
         return this.$message.error(res.message);
       }
+      this.selectUserObj = [];
       this.userList = [];
       res.data.forEach((item) => {
         let userObj = {};
