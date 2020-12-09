@@ -59,9 +59,9 @@ export default {
           id: 1,
           authName: "用户管理",
           children: {
-            会员管理: {
+            管理员管理: {
               id: 11,
-              authName: "会员管理",
+              authName: "管理员管理",
               path: "user",
             },
             角色管理: {
@@ -69,9 +69,9 @@ export default {
               authName: "角色管理",
               path: "roles",
             },
-            管理员用户管理: {
+            管用户管理: {
               id: 13,
-              authName: "管理员用户管理",
+              authName: "会员管理",
               path: "vipuser",
             },
           },
@@ -89,12 +89,7 @@ export default {
               id: 22,
               authName: "分类管理",
               path: "category",
-            },
-            管理员用户管理: {
-              id: 23,
-              authName: "管理员用户管理",
-              path: "vipuser11",
-            },
+            }
           },
         },
         交易管理: {

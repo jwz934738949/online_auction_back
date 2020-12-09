@@ -5,7 +5,7 @@
         <!-- 面包屑导航 -->
         <el-breadcrumb separator-class="el-icon-arrow-right">
           <el-breadcrumb-item><b>用户管理</b></el-breadcrumb-item>
-          <el-breadcrumb-item>会员管理</el-breadcrumb-item>
+          <el-breadcrumb-item>管理员管理</el-breadcrumb-item>
         </el-breadcrumb>
       </div>
       <div class="user_main">
