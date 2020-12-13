@@ -26,7 +26,16 @@
           </el-col>
         </el-row>
         <!-- 会员内容表格 -->
-        <el-table :data="tableData" stripe style="width: 100%">
+        <el-table
+          :data="
+            tableData.slice(
+              (currentPage - 1) * pageSize,
+              currentPage * pageSize
+            )
+          "
+          stripe
+          style="width: 100%"
+        >
           <el-table-column type="index" width="30"></el-table-column>
           <el-table-column prop="avatarUrl" label="头像" width="100">
             <template slot-scope="scope">
@@ -112,7 +121,8 @@
             background
             layout="prev, pager, next"
             :total="total"
-            :page-size="10"
+            :page-size="pageSize"
+            @current-change="currentChange"
           >
           </el-pagination>
         </div>
@@ -128,6 +138,8 @@ export default {
       tableData: [],
       // 获取数据的总条数
       total: 0,
+      currentPage: 1,
+      pageSize: 4,
       // 保存要查询的会员用户名
       vipUserName: "",
       deleteVipDialogVisible: false,
@@ -228,6 +240,11 @@ export default {
       this.$message.success("释放用户成功");
       this.getVipUser();
       this.releaseVipDialogVisible = false;
+    },
+
+    // 当前页码发生改变
+    currentChange(currentPage) {
+      this.currentPage = currentPage;
     },
   },
 };

@@ -69,7 +69,7 @@ export default {
               authName: "角色管理",
               path: "roles",
             },
-            管用户管理: {
+            会员管理: {
               id: 13,
               authName: "会员管理",
               path: "vipuser",
@@ -82,8 +82,8 @@ export default {
           children: {
             物品管理: {
               id: 21,
-              authName: "物品管理",
-              path: "user11",
+              authName: "商品管理",
+              path: "goods",
             },
             分类管理: {
               id: 22,

@@ -6,6 +6,7 @@ const Home = () => import("../views/Home/Home");
 const User = () => import("../views/Home/User/User");
 const Category = () => import("../views/Home/Goods/Category");
 const VipUser = () => import("../views/Home/User/VipUser");
+const Goods = () => import("../views/Home/Goods/Goods");
 
 Vue.use(VueRouter);
 
@@ -24,8 +25,9 @@ const routes = [
     component: Home,
     children: [
       { path: "/user", component: User },
-      { path: "/category", component: Category },
       { path: "/vipUser", component: VipUser },
+      { path: "/category", component: Category },
+      { path: "/goods", component: Goods },
     ],
   },
 ];

@@ -334,7 +334,7 @@ export default {
             data: {
               id: "",
               secondName: this.insertSecCateForm.secondName,
-              typeId: this.insertSecCateForm.typeId - 1000,
+              typeId: this.insertSecCateForm.typeId,
             },
           });
           if (res.code !== 200) {
