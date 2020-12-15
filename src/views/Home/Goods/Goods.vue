@@ -35,7 +35,7 @@
           stripe
           style="width: 100%"
         >
-          <el-table-column width="100">#</el-table-column>
+          <el-table-column type="index" width="100"></el-table-column>
           <el-table-column prop="image" label="商品图片" width="100">
             <template slot-scope="scope">
               <img :src="scope.row.image" width="50" height="50" />
@@ -83,8 +83,29 @@
             show-overflow-tooltip
           ></el-table-column>
           <el-table-column label="操作" width="150">
-            <template>
-              <el-button size="small" circle icon="el-icon-s-tools"></el-button>
+            <template slot-scope="scope">
+              <el-button
+                size="small"
+                circle
+                icon="el-icon-s-tools"
+                @click="showCheckDialog(scope.row.id)"
+              ></el-button>
+              <!-- 审核对话框 -->
+              <el-dialog
+                title="审核商品"
+                :visible.sync="checkDialogVisible"
+                width="30%"
+              >
+                <span>是否同意该商品通过审核？</span>
+                <span slot="footer" class="dialog-footer">
+                  <el-button type="danger" size="small" @click="checkFail"
+                    >不同意</el-button
+                  >
+                  <el-button type="success" size="small" @click="checkSuccess"
+                    >同意</el-button
+                  >
+                </span>
+              </el-dialog>
             </template>
           </el-table-column>
         </el-table>
@@ -114,6 +135,10 @@ export default {
       total: 0,
       currentPage: 1,
       pageSize: 4,
+      // 保存审核对话框的显示与隐藏
+      checkDialogVisible: false,
+      // 保存商品ID
+      goodsId: "",
     };
   },
   created() {
@@ -152,6 +177,46 @@ export default {
       let id = this.typeId;
       this.getGoods(id);
       this.typeId = "";
+    },
+
+    // 点击按钮显示对话框
+    showCheckDialog(id) {
+      this.checkDialogVisible = true;
+      this.goodsId = id;
+    },
+
+    // 同意商品通过审核
+    async checkSuccess() {
+      const { data: res } = await this.$http.request({
+        url: "back/goods_check/goodsCheck",
+        method: "post",
+        data: {
+          id: this.goodsId,
+        },
+      });
+      if (res.code !== 200) {
+        return this.$message.error(res.message);
+      }
+      this.$message.success("物品审核通过");
+      this.checkDialogVisible = false;
+      this.getGoods(0);
+    },
+
+    // 不同意商品通过审核
+    async checkFail() {
+      const { data: res } = await this.$http.request({
+        url: "back/goods_check/checkTypeDown",
+        method: "post",
+        data: {
+          id: this.goodsId,
+        },
+      });
+      if (res.code !== 200) {
+        return this.$message.error(res.message);
+      }
+      this.$message.success("物品审核不通过");
+      this.checkDialogVisible = false;
+      this.getGoods(0);
     },
 
     // 当前页码发生改变
