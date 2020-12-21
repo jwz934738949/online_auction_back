@@ -96,14 +96,14 @@ export default {
           id: 3,
           authName: "交易管理",
           children: {
-            会员管理: {
+            订单管理: {
               id: 31,
-              authName: "会员管理",
-              path: "user22",
+              authName: "订单管理",
+              path: "order",
             },
             角色管理: {
               id: 32,
-              authName: "角色管理",
+              authName: "统计",
               path: "roles22",
             },
             管理员用户管理: {
