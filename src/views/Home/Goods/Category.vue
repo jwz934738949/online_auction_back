@@ -97,6 +97,7 @@
           stripe
           style="width: 100%"
           row-key="id"
+          height="460"
           :tree-props="{ children: 'children', hasChildren: 'hasChildren' }"
           >>
           <el-table-column type="index" width="100"> </el-table-column>
@@ -306,7 +307,8 @@ export default {
           }
           this.$message.success("添加一级分类成功");
           this.insertCateDialogVisible = false;
-          this.getCategory();
+          await this.getCategory();
+          this.insertCateForm.name = "";
         }
       });
     },
@@ -342,7 +344,10 @@ export default {
           }
           this.$message.success("添加二级分类成功");
           this.insertCateSecDialogVisible = false;
-          this.getCategory();
+          await this.getCategory();
+          this.insertSecCateForm.id = "";
+          this.insertSecCateForm.secondName = "";
+          this.insertSecCateForm.typeId = "";
         }
       });
     },

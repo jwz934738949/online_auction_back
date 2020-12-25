@@ -64,11 +64,6 @@ export default {
               authName: "管理员管理",
               path: "user",
             },
-            角色管理: {
-              id: 12,
-              authName: "角色管理",
-              path: "roles",
-            },
             会员管理: {
               id: 13,
               authName: "会员管理",
@@ -101,15 +96,15 @@ export default {
               authName: "订单管理",
               path: "order",
             },
-            角色管理: {
+            竞拍统计: {
               id: 32,
-              authName: "统计",
-              path: "roles22",
+              authName: "竞拍统计",
+              path: "addUp",
             },
-            管理员用户管理: {
+            分类统计: {
               id: 33,
-              authName: "管理员用户管理",
-              path: "vipuser22",
+              authName: "分类统计",
+              path: "cateSum",
             },
           },
         },

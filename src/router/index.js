@@ -7,6 +7,9 @@ const User = () => import("../views/Home/User/User");
 const Category = () => import("../views/Home/Goods/Category");
 const VipUser = () => import("../views/Home/User/VipUser");
 const Goods = () => import("../views/Home/Goods/Goods");
+const Order = () => import("../views/Home/Order/Order");
+const AddUp = () => import("../views/Home/Order/AddUp");
+const CateSum = () => import("../views/Home/Order/CateSum");
 
 Vue.use(VueRouter);
 
@@ -28,6 +31,9 @@ const routes = [
       { path: "/vipUser", component: VipUser },
       { path: "/category", component: Category },
       { path: "/goods", component: Goods },
+      { path: "/order", component: Order },
+      { path: "/addUp", component: AddUp },
+      { path: "/cateSum", component: CateSum },
     ],
   },
 ];
